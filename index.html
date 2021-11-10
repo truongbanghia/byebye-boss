@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Hãy đến với sếp</title>
+</head>
+<body>
+  <div id="title">
+    <div id="titleText">
+      <span class="box">ByeBye Boss</span>
+    </div>
+  </div>
+
+  <div id="game">
+    <div id="time">
+      <p class="game-time">
+        Min-time 
+        {{ storageMinutes | zeroPad }}:
+        {{ storageSeconds | zeroPad }}:
+        {{ storageMilliSeconds | zeroPad(3) }}
+      </p>
+      <p class="game-time">
+        Current-time
+        {{ minutes | zeroPad }}:
+        {{ seconds | zeroPad }}:
+        {{ milliSeconds | zeroPad(3) }}
+      </p>
+    </div>
+    <!-- <cursor-image v-bind:src="cursorImage"></cursor-image> -->
+    <div v-for="n in 100" v-if="seen">
+      <virus-image v-bind:src="image" v-bind:id=n v-on:hoverd="decrementTotalCount"></virus-image>
+    </div>
+    <div id="start" v-if="isTitle">
+      <a href="#" class="flatButton" id="startButton" v-on:click="start">Start</a>
+    </div>
+    <div id="result" v-if="isResult">
+      <p id="resultText">DONES!!</p>
+      <div id="resultButtons">
+        <a href="#" class="flatButton" id="restartButton" v-on:click="restart">Restart</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="/__/firebase/7.19.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="/__/firebase/7.19.0/firebase-analytics.js"></script>
+
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+  <script src="src/main.js"></script>
+  <script src="src/cursor-image.js"></script>
+  <script src="src/virus-image.js"></script>
+  <script src="src/cursor-pos.js"></script>
+  <script src="src/ramdom-pos.js"></script>
+</body>
+</html>
