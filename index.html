@@ -8,7 +8,7 @@
 <body>
   <div id="title">
     <div id="titleText">
-      <span class="box">ByeBye Boss</span>
+      <span class="box">CLEAR BOSS</span>
     </div>
   </div>
 
@@ -28,16 +28,16 @@
       </p>
     </div>
     <!-- <cursor-image v-bind:src="cursorImage"></cursor-image> -->
-    <div v-for="n in 100" v-if="seen">
+    <div v-for="n in 200" v-if="seen">
       <virus-image v-bind:src="image" v-bind:id=n v-on:hoverd="decrementTotalCount"></virus-image>
     </div>
     <div id="start" v-if="isTitle">
-      <a href="#" class="flatButton" id="startButton" v-on:click="start">Start</a>
+      <a href="#" class="flatButton" id="startButton" v-on:click="start">START</a>
     </div>
     <div id="result" v-if="isResult">
-      <p id="resultText">DONES!!</p>
+      <p id="resultText">DONE!!!</p>
       <div id="resultButtons">
-        <a href="#" class="flatButton" id="restartButton" v-on:click="restart">Restart</a>
+        <a href="#" class="flatButton" id="restartButton" v-on:click="restart">RESTART</a>
       </div>
     </div>
   </div>
